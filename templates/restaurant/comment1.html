@@ -1,0 +1,247 @@
+{% extends 'restaurant/header.html' %}
+{% load static from staticfiles %}
+{% block content %}
+ <body class="page-template page-template-page-templates page-template-page_fullwidth page-template-page-templatespage_fullwidth-php page page-id-81 logged-in admin-bar no-customize-support no-js">
+
+<style>
+.c-rating__item {
+  background: url('{% static "stars.svg" %}');
+    -webkit-box-flex: 0;
+  -webkit-flex: 0 0 24px;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  height: 24px;
+/*  background: url("../img/stars.svg");*/
+  background-position: 0 0;
+  cursor: pointer;
+}
+</style>
+<link rel="stylesheet" href="{% static 'rating.css' %}">
+
+<div id="page" class="hfeed site">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    
+    <header id="masthead" class="site-header" role="banner">
+        <div class="header-wrap">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-4 col-sm-8 col-xs-12">
+                                    <a href="/restaurant" title="Review Eat !"><img class="site-logo" src="{% static 'Logo-RE-white.png' %}" alt="Review Eat !" /></a>
+                                                    <div class="btn-menu" style="float:left"></div> 
+                                </div>
+                                
+            
+                <div class="col-md-8 col-sm-4 col-xs-12">
+                    
+                    <nav id="mainnav" class="mainnav" role="navigation">
+                        <div class="menu-menu-principal-container"><ul id="menu-menu-principal" class="menu"><li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-18"><a href="/restaurant">Home</a></li>
+<li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="../payment">Payment</a></li>
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="../comment_list">Review a restaurant</a></li>
+<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-81 current_page_item menu-item-85"><a href="../balance">Balance</a></li>
+</ul></div>                 </nav><!-- #site-navigation -->
+                </div>
+                </div>
+            </div>
+        </div>
+    </header><!-- #masthead -->
+<script>
+var web3 = new Web3();
+  window.addEventListener('load', function() {
+
+  // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+  if (typeof web3 !== 'undefined') {
+       // Use Mist/MetaMask's provider
+
+    //do what you need here
+      window.web3 = new Web3(web3.currentProvider);
+    
+  } else {
+    console.log('No web3? You should consider trying MetaMask!');
+    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+    window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+  }
+
+
+
+function hex2a(hexx) {
+    var hex = hexx.toString();//force conversion
+    var str = '';
+    for (var i = 0; i < hex.length; i += 2)
+        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+    return str;
+}
+
+  // Now you can start your app & access web3 freely:
+ console.log(web3.eth.accounts[0]);
+ var account = web3.eth.accounts[0];
+var accountInterval = setInterval(function() {
+  if (web3.eth.accounts[0] !== account) {
+    account = web3.eth.accounts[0];
+    console.log(account);
+  }
+}, 100);
+
+
+var restaurantContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"com","type":"string"}],"name":"commente","outputs":[{"name":"ok","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"paieAddition","outputs":[],"payable":true,"type":"function"},{"constant":true,"inputs":[],"name":"chiffreAffaire","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"comments","outputs":[{"name":"addr","type":"address"},{"name":"message","type":"string"},{"name":"date","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"nbComments","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"inputs":[{"name":"premium","type":"bool"}],"payable":false,"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"out","type":"address"}],"name":"Print","type":"event"}]);
+
+var restaurant = restaurantContract.at("0xA831310b240f4B4acDFd2E8E8afA462Ad6578F71");
+restaurant.comments.call(0,function(error, result){
+    if(!error){
+        console.log(result);
+    }
+    else
+        console.error(error);
+});
+
+
+function commenter(){
+    var com = document.getElementById("commentaire").value ;
+    var note = document.getElementById("note").value ;
+    
+    var block = restaurant.commente.sendTransaction(com,{from:account,gas:210000}, function(err, address) {
+    if (!err)
+      console.log(address); 
+
+      jQuery.ajax({
+        url:'/restaurant/comment/{{transaction.id}}',
+        type: "POST",
+        data: {'note':note,'commentaire':com,'block':address,csrfmiddlewaretoken: '{{ csrf_token }}'},    
+        success:function(response){window.location.href='http://127.0.0.1:8000/restaurant/'},
+        complete:function(){},
+        error:function (xhr, textStatus, thrownError){}
+    });
+
+    });
+  }
+
+document.getElementById("button2").addEventListener("click", commenter);
+
+})
+</script>
+       
+  <div id="content" class="page-wrap">
+        <div class="container content-wrapper">
+            <div class="row">   
+
+
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+<article id="post-81" class="post-81 page type-page status-publish hentry">
+ <header class="entry-header">
+        <h1 class="title-post entry-title">Commenter</h1> </header><!-- .entry-header -->
+            <div class="entry-content">
+<!-- ############################################################################################### -->   
+
+<table style="margin-top:20px" cellspacing="30" cellpadding="30">
+<tr>
+<td style="border:none;font-size:20px; text-align:left">Rating</td>
+<td style="border:none;">
+<div id="textContainer" style="text-align:center;padding-top:20px"></div>
+
+<div id="el" style="text-align:center;margin-left:45%;"></div>
+<input type="hidden" name="note" id="note" value="4">
+</td>
+</tr>
+<tr>
+<td style="border:none;font-size:20px; text-align:left">Comment</td>
+<td style="border:none;"><input type="textarea" style="width:100%;height:150px;text-align:center;" id="commentaire"  name="commentaire"></td>
+</tr>
+</table>
+
+<div style="margin-top:50px;text-align:center">
+<button id="button2" onclick="commenter()">Review Eat!</button>
+</div>
+
+
+<div style="text-align:center">
+
+</div>     
+<!-- ############################################################################################### -->    
+
+            </div><!-- .entry-content -->
+
+
+    </article><!-- #post-## -->
+
+                
+            
+
+        </main><!-- #main -->
+    </div><!-- #primary -->
+
+            </div>
+        </div>
+    </div><!-- #content -->
+    
+</div><!-- #page -->
+<script src="{% static 'rating.js' %}"></script>
+<script type="text/javascript">
+  /**
+   * Demo in action!
+   */
+  (function() {
+
+    'use strict';
+
+    // SHOP ELEMENT
+    var shop = document.getElementById("el");
+
+    // DUMMY DATA
+    var data = [
+      {
+        // title: "Dope Hat",
+        // description: "Dope hat dolor sit amet, consectetur adipisicing elit. Commodi consectetur similique ullam natus ut debitis praesentium.",
+        rating: 4
+      },
+    ];
+
+    // INITIALIZE
+    (function init() {
+      for (var i = 0; i < data.length; i++) {
+        addRatingWidget(buildShopItem(data[i]), data[i]);
+      }
+    })();
+
+    // BUILD SHOP ITEM
+    function buildShopItem(data) {
+      var shopItem = document.createElement('div');
+
+      var html = '<div class="c-shop-item__img"></div>' +
+        '<div class="c-shop-item__details">' +
+          // '<h3 class="c-shop-item__title">' + data.title + '</h3>' +
+          // '<p class="c-shop-item__description">' + data.description + '</p>' +
+          '<ul class="c-rating"></ul>' +
+        '</div>';
+
+      shopItem.classList.add('c-shop-item');
+      shopItem.innerHTML = html;
+      shop.appendChild(shopItem);
+
+      return shopItem;
+    }
+
+    // ADD RATING WIDGET
+    function addRatingWidget(shopItem, data) {
+      var ratingElement = shopItem.querySelector('.c-rating');
+      var currentRating = data.rating;
+      var maxRating = 5;
+      var callback = function(rating) { 
+        var note=document.getElementById("note");
+        note.value=rating;
+      };
+      var r = rating(ratingElement, currentRating, maxRating, callback);
+    }
+
+  })();
+
+</script>
+<script type='text/javascript' src="{% static 'scripts.js' %}"></script>
+<script type='text/javascript' src="{% static 'main.min.js' %}"</script>
+
+</body>  
+
+
+{% endblock content %}
+
+ 

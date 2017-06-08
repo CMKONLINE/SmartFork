@@ -1,0 +1,7 @@
+/**
+ * WowRatingJs
+ * @author BossByte Software House
+ * @version v1.0.0
+ * @page http://www.bossbyte.com
+ */
+@media (min-width: 768px){.hidden-rating-md{display:none;visibility:hidden}}.hidden-el{display:none;visibility:hidden}.awesome_rating{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;position:relative;}.awesome_rating .rating_el{position:relative;-webkit-tap-highlight-color:transparent;color:#fff;cursor:pointer;display:block}.awesome_rating .awesome_rating_label{position:absolute;left:0;bottom:100%;text-align:center;width:100%}

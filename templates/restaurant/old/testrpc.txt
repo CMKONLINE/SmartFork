@@ -1,0 +1,16 @@
+// creation des comptes
+testrpc --account="0x8e1d347f6a6b11285abe9dc21bd9bff21752c1fe173c386759691b43e53398d6,10000000000000000000" --account="0xccf439181e049f71204afb8e31160ab60ef6134744004403905e230de78009ba,100000000000000000000" --account="0x696179c02a01c7c2460adf2b99512b16c98dda4cc635dd9087a54dc0626d90fc,50000000000000000000"
+
+
+//Mist
+
+//main account
+// 0xbA778D5CB64a7D2Cb7Bc78D175654b442d3Ff5A1
+//mdp : smartfork2017
+//private key : 79ed7b56501d92b690302daee25098cf104ee6e045bedcafd3782eb1cd5a3b52
+//portefeuille
+// 0x2C086BA66df7F8622ebB38dE66876afc422d613E
+
+//MetaMask
+//smarfork2017
+//modify royal track target sword obey genre genius sister bulb kind road

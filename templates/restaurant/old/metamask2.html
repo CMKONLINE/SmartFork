@@ -1,0 +1,15 @@
+{% load static from staticfiles %}
+<html>
+
+<head>
+
+<script type="text/javascript" src="{% static 'bignumber.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'web3-light.js' %}"></script>
+<script type="text/javascript" src="{% static 'test_meta.js' %}"></script>
+
+ <input type="number" id="addition"><br>
+<button id="button1" onclick="paieRestaurant()">Payer</button>
+<br><br>
+<textarea id="commentaire" rows="10" cols="100"></textarea>
+<br>
+<button id="button2" onclick="commenter()">Commenter</button>

@@ -1,0 +1,258 @@
+{% load static from staticfiles %}
+{% block header%}
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+
+<title>Review Eat! - Review Eat !</title>
+
+<meta name="robots" content="noindex,follow"/>
+<link rel="canonical" href="/review-a-restaurant/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Review Eat! - Review Eat !" />
+<meta property="og:description" content="Payer Commenter" />
+<meta property="og:url" content="/review-a-restaurant/" />
+<meta property="og:site_name" content="Review Eat !" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Payer Commenter" />
+<meta name="twitter:title" content="Review Eat! - Review Eat !" />
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Review Eat ! &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Review Eat ! &raquo; Comments Feed" href="/comments/feed/" />
+<link rel='stylesheet' id='siteorigin-panels-front-css'  href="{% static 'front.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='sydney-bootstrap-css'  href="{% static 'bootstrap.min.css' %}" type='text/css' media='all' />
+
+<link rel='stylesheet' id='sydney-body-fonts-css'  href='//fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C400italic%2C600&#038' type='text/css' media='all' />
+<link rel='stylesheet' id='sydney-headings-fonts-css'  href='//fonts.googleapis.com/css?family=Raleway%3A400%2C500%2C600&#038' type='text/css' media='all' />
+<link rel='stylesheet' id='sydney-style-css'  href="{% static 'style.css' %}" type='text/css' media='all' />
+<style id='sydney-style-inline-css' type='text/css'>
+.site-title { font-size:32px; }
+.site-description { font-size:16px; }
+#mainnav ul li a { font-size:16px; }
+h1 { font-size:52px; }
+h2 { font-size:42px; }
+h3 { font-size:32px; }
+h4 { font-size:25px; }
+h5 { font-size:20px; }
+h6 { font-size:18px; }
+body { font-size:14px; }
+.header-image { background-size:cover;}
+.header-image { height:300px; }
+.site-header.float-header { background-color:rgba(0,0,0,0.9);}
+@media only screen and (max-width: 1024px) { .site-header { background-color:#000000;}}
+.site-title a, .site-title a:hover { color:#ffffff}
+.site-description { color:#ffffff}
+#mainnav ul li a, #mainnav ul li::before { color:#ffffff}
+#mainnav .sub-menu li a { color:#ffffff}
+#mainnav .sub-menu li a { background:#1c1c1c}
+.text-slider .maintitle, .text-slider .subtitle { color:#ffffff}
+body { color:#767676}
+#secondary { background-color:#ffffff}
+#secondary, #secondary a, #secondary .widget-title { color:#767676}
+.footer-widgets { background-color:#252525}
+.site-footer { background-color:#1c1c1c}
+.site-footer,.site-footer a { color:#666666}
+.overlay { background-color:#000000}
+.page-wrap { padding-top:0px;}
+.page-wrap { padding-bottom:100px;}
+
+.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+
+        @media only screen and (max-width: 1024px) {
+            .header-inner {
+                display: block;
+            }
+            .header-image {
+                background-image: none;
+                height: auto !important;
+            }       
+        }
+
+</style>
+<link rel='stylesheet' id='sydney-font-awesome-css'  href="{% static 'font-awesome.min.css' %}" type='text/css' media='all' />
+<script type='text/javascript' src="{% static 'jquery.js' %}"></script>
+<script type='text/javascript' src="{% static 'jquery-migrate.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bignumber.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'web3.js' %}"></script>
+
+<script type="text/javascript">
+   
+    var Web3 = require('web3');
+    var web3 = new Web3();
+  window.addEventListener('load', function() {
+
+  // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+  if (typeof web3 !== 'undefined') {
+    // Use Mist/MetaMask's provider
+    window.web3 = new Web3(web3.currentProvider);
+  } else {
+    console.log('No web3? You should consider trying MetaMask!')
+    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+    window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+  }
+
+
+
+  // Now you can start your app & access web3 freely:
+//  console.log(web3.eth.accounts[0]);
+//  var account = web3.eth.accounts[0];
+// var accountInterval = setInterval(function() {
+//   if (web3.eth.accounts[0] !== account) {
+//     account = web3.eth.accounts[0];
+//     console.log(account);
+//   }
+// }, 100);
+
+
+
+})
+
+
+</script>
+
+<link rel="icon" href="{% static 'cropped-Icon-32x32.png' %}" sizes="32x32" />
+<link rel="icon" href="{% static 'cropped-Icon-192x192.png' %}" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="{% static 'cropped-Icon-180x180.png' %}"/>
+<meta name="msapplication-TileImage" content="{% static 'cropped-Icon-270x270.png' %}" />
+<!-- ############################################################################################### -->  
+<link rel="stylesheet" type="text/css" href="{% static 'stimenu.css' %}" />
+<!-- ############################################################################################### -->  
+</head>
+{% endblock header %}
+{% block content %}
+ <body class="page-template page-template-page-templates page-template-page_fullwidth page-template-page-templatespage_fullwidth-php page page-id-81 logged-in admin-bar no-customize-support no-js">
+
+
+
+<div id="page" class="hfeed site">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    
+    <header id="masthead" class="site-header" role="banner">
+        <div class="header-wrap">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-4 col-sm-8 col-xs-12">
+                                    <a href="." title="Review Eat !"><img class="site-logo" src="{% static 'Logo-RE-white.png' %}" alt="Review Eat !" /></a>
+                                                    <div class="btn-menu" style="float:left"></div> 
+                                </div>
+                                
+            
+                <div class="col-md-8 col-sm-4 col-xs-12">
+                    
+                    <nav id="mainnav" class="mainnav" role="navigation">
+                        <div class="menu-menu-principal-container"><ul id="menu-menu-principal" class="menu"><li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-18"><a href=".">Home</a></li>
+<li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="payment">Payment</a></li>
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="comment_list">Review a restaurant</a></li>
+<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-81 current_page_item menu-item-85"><a href="balance">Balance</a></li>
+<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-81 current_page_item menu-item-85"><a href="/accounts/logout">Logout</a></li>
+</ul></div>                 </nav><!-- #site-navigation -->
+                </div>
+                </div>
+            </div>
+        </div>
+    </header><!-- #masthead -->
+
+
+
+         
+  <div id="content" class="page-wrap">
+        <div class="container content-wrapper">
+            <div class="row">   
+
+
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+
+               
+<article id="post-81" class="post-81 page type-page status-publish hentry">
+    <header class="entry-header">
+        <h1 class="title-post entry-title">Contract Creation</h1> </header><!-- .entry-header -->
+            <div class="entry-content">
+<!-- ############################################################################################### -->    
+        
+<div id="wait">The smart contract is deploying. Wait.</div>
+
+<!-- ############################################################################################### -->    
+
+            </div><!-- .entry-content -->
+
+
+    </article><!-- #post-## -->
+
+                
+            
+
+
+                
+            
+
+        </main><!-- #main -->
+    </div><!-- #primary -->
+
+            </div>
+        </div>
+    </div><!-- #content -->
+    
+</div><!-- #page -->
+<script type="text/javascript">
+
+	var charge=false;
+	setInterval(function(){
+    if (!charge){
+        if(web3.currentProvider!="undefined"){
+            charge=true;
+            
+            var premium = true;
+var restaurant_restaurantContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"com","type":"string"}],"name":"commente","outputs":[{"name":"ok","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"paieAddition","outputs":[],"payable":true,"type":"function"},{"constant":true,"inputs":[],"name":"chiffreAffaire","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"comments","outputs":[{"name":"addr","type":"address"},{"name":"message","type":"string"},{"name":"date","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"nbComments","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"inputs":[{"name":"premium","type":"bool"}],"payable":false,"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"out","type":"address"}],"name":"Print","type":"event"}]);
+var restaurant_restaurant = restaurant_restaurantContract.new(
+   premium,
+   {
+     from: web3.eth.defaultAccount, 
+     data: '0x606060405260006000556000600455341561001657fe5b604051602080610c3e833981016040528080519060200190919050505b33600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600160146101000a81548160ff0219169083151502179055505b505b610b9e806100a06000396000f30060606040523615610076576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063363605451461007857806341c0e1b5146100ea578063783132ba146100fc578063848c2359146101065780638ebb4c151461012c578063a96892011461021c575bfe5b341561008057fe5b6100d0600480803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610242565b604051808215151515815260200191505060405180910390f35b34156100f257fe5b6100fa61066a565b005b6101046106fe565b005b341561010e57fe5b6101166108d9565b6040518082815260200191505060405180910390f35b341561013457fe5b61014a60048080359060200190919050506108df565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018060200183815260200182810382528481815460018160011615610100020316600290048152602001915080546001816001161561010002031660029004801561020b5780601f106101e05761010080835404028352916020019161020b565b820191906000526020600020905b8154815290600101906020018083116101ee57829003601f168201915b505094505050505060405180910390f35b341561022457fe5b61022c610928565b6040518082815260200191505060405180910390f35b6000600060006000600060006000600060006000600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080549050111561065357600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002097508760018980549050038154811015156102f557fe5b906000526020600020906006020160005b509650866003019550856001019450429350600085805460018160011615610100020316600290049050148015610345575062093a8087600201548503105b1561064e576060604051908101604052803373ffffffffffffffffffffffffffffffffffffffff1681526020018b81526020018581525060036000600454815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010190805190602001906103f492919061092e565b50604082015181600201559050506003600060046000815480929190600101919050558152602001908152602001600020876003016000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600182018160010190805460018160011615610100020316600290046104b79291906109ae565b50600282015481600201559050507fa8e608801119a422405d57e76518f793d972b389576b43d2e40d59d4dde10ff733604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a1600160149054906101000a900460ff1615610645578660000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169250600a876001015481151561057457fe5b0491508273ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051809050600060405180830381858888f1935050505015156105be576000985061065d565b81600060008282540392505081905550603287600101548115156105de57fe5b04905073be965ade05180186cdeeb1b31d4694bf5f4a55cb73ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051809050600060405180830381858888f193505050501561064357806000600082825403925050819055505b5b5b6001985061065d565b61065c565b6000985061065d565b5b5050505050505050919050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156106fb57600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b5b565b670de0b6b3a76400003411156108d657600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020805480600101828161075f9190610a35565b916000526020600020906006020160005b6080604051908101604052803373ffffffffffffffffffffffffffffffffffffffff1681526020013481526020014281526020016060604051908101604052803373ffffffffffffffffffffffffffffffffffffffff1681526020016020604051908101604052806000815250815260200142815250815250909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550602082015181600101556040820151816002015560608201518160030160008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010190805190602001906108b592919061092e565b50604082015181600201555050505050346000600082825401925050819055505b5b565b60005481565b60036020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169080600101908060020154905083565b60045481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061096f57805160ff191683800117855561099d565b8280016001018555821561099d579182015b8281111561099c578251825591602001919060010190610981565b5b5090506109aa9190610a67565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106109e75780548555610a24565b82800160010185558215610a2457600052602060002091601f016020900482015b82811115610a23578254825591600101919060010190610a08565b5b509050610a319190610a67565b5090565b815481835581811511610a6257600602816006028360005260206000209182019101610a619190610a8c565b5b505050565b610a8991905b80821115610a85576000816000905550600101610a6d565b5090565b90565b610b2791905b80821115610b235760006000820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055600182016000905560028201600090556003820160006000820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055600182016000610b109190610b2a565b6002820160009055505050600601610a92565b5090565b90565b50805460018160011615610100020316600290046000825580601f10610b505750610b6f565b601f016020900490600052602060002090810190610b6e9190610a67565b5b505600a165627a7a723058209b9ea020afd977ff420e7f1af37a06b17627c7a772633b9417cea63091c99ef80029', 
+     gas: '4700000'
+   }, function (e, contract){
+    console.log(e, contract);
+    if (typeof contract.address !== 'undefined') {
+         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+   var msg = document.getElementById('wait');
+   msg.innerHTML="Contract created !";
+   jQuery.ajax({
+        url:'/restaurant/create_contract',
+        type: "POST",
+        data: {'contrat':contract.address,csrfmiddlewaretoken: '{{ csrf_token }}'},    
+        success:function(response){var redirection="http://"+ window.location.host + "/restaurant/";window.location.href=redirection;},
+        complete:function(){},
+        error:function (xhr, textStatus, thrownError){}
+    });
+
+
+    }
+ })
+
+        }else{console.error("Web3 Non charge");}
+    }
+}, 2000);
+	
+</script>
+<script type='text/javascript' src="{% static 'scripts.js' %}"></script>
+<script type='text/javascript' src="{% static 'main.min.js' %}"</script>
+
+</body>  
+
+
+{% endblock content %}
+
+
+
+            
+ 
+
+

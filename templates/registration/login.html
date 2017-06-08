@@ -1,0 +1,110 @@
+{% extends 'restaurant/header.html' %}
+{% load static from staticfiles %}
+{% block content %}
+ <body class="page-template page-template-page-templates page-template-page_fullwidth page-template-page-templatespage_fullwidth-php page page-id-81 logged-in admin-bar no-customize-support no-js">
+
+
+
+<div id="page" class="hfeed site">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    
+    <header id="masthead" class="site-header" role="banner">
+        <div class="header-wrap">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-4 col-sm-8 col-xs-12">
+                                    <a href="." title="Review Eat !"><img class="site-logo" src="{% static 'Logo-RE-white.png' %}" alt="Review Eat !" /></a>
+                                                    <div class="btn-menu" style="float:left"></div> 
+                                </div>
+                                
+            
+                <div class="col-md-8 col-sm-4 col-xs-12">
+                    
+                    <nav id="mainnav" class="mainnav" role="navigation">
+                        <div class="menu-menu-principal-container"><ul id="menu-menu-principal" class="menu"><li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-18"><a href=".">Home</a></li>
+<li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="payment">Payment</a></li>
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="comment_list">Review a restaurant</a></li>
+<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-81 current_page_item menu-item-85"><a href="balance">Balance</a></li>
+</ul></div>                 </nav><!-- #site-navigation -->
+                </div>
+                </div>
+            </div>
+        </div>
+    </header><!-- #masthead -->
+
+
+
+         
+  <div id="content" class="page-wrap">
+        <div class="container content-wrapper">
+            <div class="row">   
+
+
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+
+<article id="post-81" class="post-81 page type-page status-publish hentry">
+    <header class="entry-header">
+        <h1 class="title-post entry-title">Inscription</h1> </header><!-- .entry-header -->
+            <div class="entry-content">
+<!-- ############################################################################################### -->    
+       
+            {% block messages %}
+          {% if messages %}
+          <ul class="messagelist">{% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}</ul>
+          {% endif %}
+          {% endblock messages %}
+
+	<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+	{% csrf_token %}
+	<p>	
+		<input type="text" placeholder="Login"  name="username" required/>
+	</p>
+	<p>
+		<input type="password"  name="password" placeholder="Mot de passe" required/>
+
+	</p>
+	<p>
+		<button type="submit" style="cursor:pointer;">S'identifier</button>
+		<input type="hidden" name="next" value="{{ next }}" />		
+	</p>
+	<div>
+		<a href="/utilisateur/register/">Pas encore  inscrit ?</a>
+		<a  href="/accounts/password_reset/">Mot de passe oublié ?</a>
+	</div>
+	<br>
+	{% if form.errors %}
+	<p>Identifiant ou mot de passe incorrect, veuillez réessayer.</p>
+	{% endif %}
+	</form>
+
+<!-- ############################################################################################### -->    
+
+            </div><!-- .entry-content -->
+
+
+    </article><!-- #post-## -->
+
+                
+            
+
+        </main><!-- #main -->
+    </div><!-- #primary -->
+
+            </div>
+        </div>
+    </div><!-- #content -->
+    
+</div><!-- #page -->
+
+<script type='text/javascript' src="{% static 'scripts.js' %}"></script>
+<script type='text/javascript' src="{% static 'main.min.js' %}"</script>
+
+</body>  
+
+
+{% endblock content %}
+
